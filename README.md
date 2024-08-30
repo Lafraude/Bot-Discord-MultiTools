@@ -1,3 +1,11 @@
+## Rejoignez-nous sur Discord
+
+Pour toute question, suggestion, ou simplement pour discuter avec la communauté, rejoignez-nous sur notre serveur Discord !
+
+👉 [Rejoindre le serveur Discord](https://discord.gg/zykD35HXmH)
+
+Nous serions ravis de vous y voir ! 😄
+
 ## Installation Instructions
 
 Hi there 👋,
