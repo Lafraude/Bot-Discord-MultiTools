@@ -1,0 +1,11 @@
+{
+  "token": "YOUR TOKEN ",
+  "client_id": "YOUR CLIEND ID ",
+  "guildId": " YOUR GUILD ID",
+  "antiraid_channel_id": "",
+  "welcome_channel_id": "",
+  "welcome_role_id": "",
+  "test": "",
+  "roleId": "",
+  "REVIEW_CHANNEL_ID": ""
+}
