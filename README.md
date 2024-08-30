@@ -51,6 +51,6 @@ Simplifiez l'administration de votre serveur avec ces commandes utilitaires :
 - **/setup-antiraid** : Mettez en place les paramètres antiraid rapidement.
 - **/giveaway** : Organisez facilement des giveaways pour votre communauté.
 - **/mpall** : Envoyez un message privé à tous les membres du serveur.
-- **!footer** : Ajoutez un footer personnalisé à vos messages.
+- **!footer** : Modifiez la photo de profil de votre bot.
 - **/role-perm** : Gérez les permissions des rôles.
 - **/role-perm-remove** : Supprimez les permissions des rôles.
