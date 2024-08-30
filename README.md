@@ -1,10 +1,10 @@
-## Rejoignez-nous sur Discord
+## Join Us on Discord
 
-Pour toute question, suggestion, ou simplement pour discuter avec la communauté, rejoignez-nous sur notre serveur Discord !
+For any questions, suggestions, or just to chat with the community, join us on our Discord server!
 
-👉 [Rejoindre le serveur Discord](https://discord.gg/zykD35HXmH)
+👉 [Join the Discord Server](https://discord.gg/zykD35HXmH)
 
-Nous serions ravis de vous y voir ! 😄
+We'd love to see you there! 😄
 
 ## Installation Instructions
 
