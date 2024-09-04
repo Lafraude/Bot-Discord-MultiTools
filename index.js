@@ -174,22 +174,6 @@ const unblacklistt = new discord.SlashCommandBuilder()
     .setRequired(true)
   )
 
-// Setup status 
-const setup_statut = new discord.SlashCommandBuilder()
-  .setName('setup-statut')
-  .setDescription('Configurer le status du bot')
-  .addStringOption(option =>
-    option.setName('status')
-    .setDescription('Le status de l\'utilisateur ')
-    .setRequired(true)
-  )
-  .addRoleOption(role =>
-    role.setName('role')
-    .setDescription('Le rôle à attribuer a l\'utilisateur')
-    .setRequired(true)
-  )
-
-
 // WARN 
 
 const warn_add = new discord.SlashCommandBuilder()
