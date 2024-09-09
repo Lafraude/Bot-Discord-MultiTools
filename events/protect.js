@@ -215,4 +215,4 @@ client.on('messageCreate', message => {
 });
 
 client.login(config.token)
-    .catch(console("Erreur sur le token"));
+    .catch(error => console.error("Erreur sur le token:", error));
