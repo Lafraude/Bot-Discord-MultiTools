@@ -276,7 +276,6 @@ const commands = [
     giveaway.toJSON(),
     blacklistt.toJSON(),
     unblacklistt.toJSON(),
-    setup_statut.toJSON(),
     warn_add.toJSON(),
     warn_remove.toJSON(),
     warn_list.toJSON(),
