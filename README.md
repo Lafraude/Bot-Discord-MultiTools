@@ -42,6 +42,9 @@ Simplifiez l'administration de votre serveur avec ces commandes utilitaires :
 - **!footer** : Modifiez la photo de profil de votre bot.
 - **/role-perm** : Gérez les permissions des rôles.
 - **/role-perm-remove** : Supprimez les permissions des rôles.
+- **/mpjoinactivate**: Permet d\'activer ou non l\'envoi d\'un MP à l\'utilisateur qui rejoint le serveur.
+- **/mpjoinconfig**: Permet de configurer le message envoyé à l\'utilisateur qui rejoint le serveur.
+- **!say**: Utilisez cette commande pour que le bot envoie le message que vous avez écrit, tout en supprimant votre message original.
 
 ## Instructions d'Installation
 
