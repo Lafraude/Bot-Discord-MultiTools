@@ -11,6 +11,7 @@ const path = require('path');
 const axios = require('axios'); 
 const chalk = require('chalk');
 const figlet = require('figlet');
+const discordModals = require('discord-modals');
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -255,6 +256,20 @@ const rerollGiveaway = new discord.SlashCommandBuilder()
       option.setName('giveaway_id')
       .setDescription('Id du giveawya')
     )
+// Commande pour dm quand il join 
+const mpjoinconfig = new discord.SlashCommandBuilder()
+    .setName('mpjoinconfig')
+    .setDescription('Configurer le message pour les nouveaux membres')
+  
+const mpjoinactivate = new discord.SlashCommandBuilder()
+    .setName('mpjoinactivate')
+    .setDescription('Activer ou désactiver les MP pour les nouveaux membres')
+    .addBooleanOption(option =>
+    option.setName('etat')
+        .setDescription('Activer ou désactiver')
+        .setRequired(true))
+  
+
 ///////////////////////////////////////////////////////////////////////////////
                             // SELECTEUR MENU //
 ///////////////////////////////////////////////////////////////////////////////
@@ -282,8 +297,9 @@ const commands = [
     emoji_addd.toJSON(),
     role_perm.toJSON(),
     role_remove_perm.toJSON(),
-    rerollGiveaway.toJSON()
-    // warn_command.toJSON()
+    rerollGiveaway.toJSON(),
+    mpjoinconfig.toJSON(),
+    mpjoinactivate.toJSON()
   ];
   
   const rest = new discord.REST({ version: '10' }).setToken(config.token);
@@ -385,7 +401,7 @@ function verifyLoadedItems(items, itemType) {
             }
             console.log(`${chalk.greenBright('✅')} ${chalk.bold.white(`${itemType} ${index + 1}`)} ${chalk.green('opérationnel.')}`);
         } catch (error) {
-            console.error(`${chalk.redBright('❌')} ${chalk.bold.white(`${itemType} ${index + 1}`)} ${chalk.red('non opérationnel :')}\n${chalk.gray(error.message)}`);
+            console.error(`${chalk.redBright('❌')} ${chalk.bold.white(`${itemType} ${index + 1}`)} ${chalk.red('non opérationnel :')}\n${chalk.gray(error)}`);
         }
     });
 }
@@ -420,6 +436,9 @@ setTimeout(() => {
 
     console.log(chalk.magenta.bold('\nVérification terminée. Attendez l\'affichage du ping pour confirmer que le bot est lancé.'));
   }, 10);
+
+
+discordModals(client);
 
 // NE PAS MODIFIER
 client.login(config.token)
