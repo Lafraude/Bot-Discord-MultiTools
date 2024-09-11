@@ -143,7 +143,17 @@ client.on('interactionCreate', async interaction => {
           fields: [
             {
               name: '',
-              value: '**/ban**: Bannir un utilisateur.\n**/unban**: Débannir un utilisateur.\n**/kick**: Expluser un utilisateur.\n**/warn-add**: Ajouter un warn a un utilisateur.\n**/warn-remove**: Retire un warn a un membres.\n**/warn-list**: Permet de voir les warns\n**/lock**: Lock un salon avec la raison.\n**/unlock**: Unlock un salon.\n**/blacklist**: Ban un membres de tout les discord.\n**/unblacklist:** Unban un membres de tout les discord.'
+              value: 
+              '**/ban**: Bannir un utilisateur.' +
+              '\n**/unban**: Débannir un utilisateur'+
+              '\n**/kick**: Expluser un utilisateur.'+
+              '\n**/warn-add**: Ajouter un warn a un utilisateur.'+
+              '\n**/warn-remove**: Retire un warn a un membres.'+
+              '\n**/warn-list**: Permet de voir les warns.'+
+              '\n**/lock**: Lock un salon avec la raison.'+
+              '\n**/unlock**: Unlock un salon.'+
+              '\n**/blacklist**: Ban un membres de tout les discord.'+
+              '\n**/unblacklist:** Unban un membres de tout les discord.'
             }],
         })
           
@@ -180,7 +190,16 @@ client.on('interactionCreate', async interaction => {
               fields: [
                 {
                   name: '',
-                  value: '**/embed-create** Permet de crée un embed.\n**/setup-log** Permet de configurer les logs\n**/setup-antiraid** Permet de configurer le système antiraid\n**!footer** Permet de modifier la pp du bot\n**/giveaway** Permet de crée un giveaway.\n**/emoji-add** Permet d\'ajouter un emoji.\n**/role-perm**: Permet d\'ajouter un role permanent (Si l\'utilisateur quitte le serveur et revient, il aura toujours le rôle.)\n**/role-perm-remove**: Retire le role perm.'
+                  value:
+                  '\n**/setup-log**: Permet de configurer les logs.'+
+                  '\n**/setup-antiraid**: Permet de configurer le système antiraid.'+
+                  '\n**!footer**: Permet de modifier la pp du bot'+
+                  '\n**/giveaway**: Permet de crée un giveaway.'+
+                  '\n**/emoji-add**: Permet d\'ajouter un emoji.'+
+                  '\n**/role-perm**: Permet d\'ajouter un role permanent (Si l\'utilisateur quitte le serveur et revient, il aura toujours le rôle.)'+
+                  '\n**/role-perm-remove**: Retire le role perm.' + 
+                  '\n**/mpjoinactivate**: Permet d\'activer ou non l\'envoi d\'un MP à l\'utilisateur qui rejoint le serveur.' +
+                  '\n**/mpjoinconfig**: Permet de configurer le message envoyé à l\'utilisateur qui rejoint le serveur.'                  
                 }],
               })
             break;
