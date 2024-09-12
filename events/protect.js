@@ -25,7 +25,8 @@ const client = new Client({
     ],
     
   });
-
+const YELLOW = "\x1b[33m";
+const RESET = "\x1b[0m";
 
 // LA COMMANDE ANTI RAID //
 client.on('interactionCreate', async interaction => {
@@ -211,7 +212,7 @@ client.on('messageCreate', message => {
               .catch(console.error('Erreur lors de la suppression du message:', err));
           return;
       }
-  } else { console.error('Message détécter (Détection automatique (AntiLink protect))') }
+  } else { console.error(`${YELLOW} Message détécter (Détection automatique (AntiLink protect))${RESET}`) }
 });
 
 client.login(config.token)
