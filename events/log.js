@@ -24,7 +24,6 @@ const client = new Client({
       GatewayIntentBits.MessageContent,
       GatewayIntentBits.GuildScheduledEvents
     ],
-    
   });
 
 // Message supp
@@ -145,7 +144,6 @@ client.on('messageDelete', async message => {
   
   // Role donner 
   client.on('guildMemberUpdate', async (oldMember, newMember) => {
-    // Check if roles have been added
     const addedRoles = newMember.roles.cache.filter(role => !oldMember.roles.cache.has(role.id));
     if (addedRoles.size > 0) {
         try {
@@ -156,7 +154,7 @@ client.on('messageDelete', async message => {
   
             const logEntry = auditLogs.entries.first();
             const user = logEntry.executor;
-            const role = addedRoles.first(); // Assuming only one role added at a time
+            const role = addedRoles.first(); 
   
             const embed = new discord.EmbedBuilder()
                 .setTitle('Rôle ajouté à un membre')
@@ -181,7 +179,6 @@ client.on('messageDelete', async message => {
   
   // Role retiré 
   client.on('guildMemberUpdate', async (oldMember, newMember) => {
-    // Check if roles have been removed
     const removedRoles = oldMember.roles.cache.filter(role => !newMember.roles.cache.has(role.id));
     if (removedRoles.size > 0) {
         try {
@@ -192,7 +189,7 @@ client.on('messageDelete', async message => {
   
             const logEntry = auditLogs.entries.first();
             const user = logEntry.executor;
-            const role = removedRoles.first(); // Assuming only one role removed at a time
+            const role = removedRoles.first(); 
   
             const embed = new discord.EmbedBuilder()
                 .setTitle('Rôle retiré à un membre')
@@ -273,7 +270,6 @@ client.on('messageDelete', async message => {
   
   // Quand un membre join la voc 
   client.on('voiceStateUpdate', (oldState, newState) => {
-    // Check if the member has joined a voice channel
     if (!oldState.channel && newState.channel) {
         const member = newState.member;
         const channel = newState.channel;
@@ -297,7 +293,6 @@ client.on('messageDelete', async message => {
   
   // Quand un membbre quitte la voc 
   client.on('voiceStateUpdate', (oldState, newState) => {
-    // Check if the member has left a voice channel
     if (oldState.channel && !newState.channel) {
         const member = oldState.member;
         const channel = oldState.channel;
@@ -321,7 +316,6 @@ client.on('messageDelete', async message => {
   
   // Quand un membre a était kick de la voc 
   client.on('voiceStateUpdate', async (oldState, newState) => {
-    // Check if the member has been disconnected from a voice channel
     if (oldState.channel && !newState.channel) {
         try {
             const auditLogs = await oldState.guild.fetchAuditLogs({
@@ -355,7 +349,6 @@ client.on('messageDelete', async message => {
   
   // Quand un membre a été déplacé de voc
   client.on('voiceStateUpdate', async (oldState, newState) => {
-    // Check if the member has been moved to a different voice channel
     if (oldState.channel && newState.channel && oldState.channel.id !== newState.channel.id) {
         try {
             const auditLogs = await oldState.guild.fetchAuditLogs({
@@ -389,7 +382,6 @@ client.on('messageDelete', async message => {
   
   // Quand un membre a été mute dans la voc
   client.on('voiceStateUpdate', async (oldState, newState) => {
-    // Check if the member has been muted
     if (!oldState.serverMute && newState.serverMute) {
         try {
             const auditLogs = await newState.guild.fetchAuditLogs({
@@ -401,7 +393,6 @@ client.on('messageDelete', async message => {
             const executor = logEntry.executor;
             const target = logEntry.target;
   
-            // Only proceed if the target of the audit log is the same member who got muted
             if (target.id === newState.member.id) {
                 const embed = new discord.EmbedBuilder()
                     .setTitle('Membre mute en vocal')
@@ -426,7 +417,6 @@ client.on('messageDelete', async message => {
   
   // Quand un membre a était mis en sourdine dans la voc 
   client.on('voiceStateUpdate', async (oldState, newState) => {
-    // Check if the member has been deafened
     if (!oldState.serverDeaf && newState.serverDeaf) {
         try {
             const auditLogs = await newState.guild.fetchAuditLogs({
@@ -438,7 +428,6 @@ client.on('messageDelete', async message => {
             const executor = logEntry.executor;
             const target = logEntry.target;
   
-            // Only proceed if the target of the audit log is the same member who got deafened
             if (target.id === newState.member.id) {
                 const embed = new discord.EmbedBuilder()
                     .setTitle('Membre mis en sourdine en vocal')
@@ -500,7 +489,7 @@ client.on('messageDelete', async message => {
   // salon delete 
   client.on('channelDelete', async (channel) => {
     try {
-        if (!channel.guild) return; // Ignore DM channels
+        if (!channel.guild) return; 
   
         const auditLogs = await channel.guild.fetchAuditLogs({
             type: 12,
@@ -607,7 +596,6 @@ client.on('messageDelete', async message => {
   
         const logEntry = auditLogs.entries.first();
   
-        // Vérifier que le log concerne bien ce membre spécifique
         if (!logEntry || logEntry.target.id !== member.id) return;
   
         const user = logEntry.executor;
@@ -636,7 +624,6 @@ client.on('messageDelete', async message => {
   
   // TimeOut 
   client.on('guildMemberUpdate', async (oldMember, newMember) => {
-    // Check if the timeout property has changed
     if (oldMember.communicationDisabledUntilTimestamp !== newMember.communicationDisabledUntilTimestamp) {
         try {
             const auditLogs = await newMember.guild.fetchAuditLogs({
@@ -648,7 +635,6 @@ client.on('messageDelete', async message => {
             const user = logEntry.executor;
             const reason = logEntry.reason || 'Aucune raison spécifiée';
   
-            // Check if the newMember is timed out
             if (newMember.communicationDisabledUntilTimestamp) {
                 const timeoutUntil = new Date(newMember.communicationDisabledUntilTimestamp).toLocaleString();
   
@@ -677,7 +663,6 @@ client.on('messageDelete', async message => {
   
   // Untimeout 
   client.on('guildMemberUpdate', async (oldMember, newMember) => {
-    // Check if the timeout property has changed and the new value is null (i.e., untimeout)
     if (oldMember.communicationDisabledUntilTimestamp && !newMember.communicationDisabledUntilTimestamp) {
         try {
             const auditLogs = await newMember.guild.fetchAuditLogs({
