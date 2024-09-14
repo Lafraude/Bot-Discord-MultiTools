@@ -61,18 +61,7 @@ const setupwelcome = new discord.SlashCommandBuilder()
       .setRequired(true)
     )
 
-// Message reac qui donne un rôle 
-const messagereac = new discord.SlashCommandBuilder()
-    .setName('message-react')
-    .setDescription('Ajoute un rôle à tous les nouveaux membres.')
-    .addRoleOption(role =>
-      role.setName('role')
-      .setDescription('Le rôle à attribuer à tous les nouveaux membres.')
-      .setRequired(false)
-    )
-
 // Commande setup log 
-
 const setuplog = new discord.SlashCommandBuilder()
     .setName('setup-log')
     .setDescription('Configurer le bot pour suivre les logs.')
@@ -270,6 +259,22 @@ const mpjoinactivate = new discord.SlashCommandBuilder()
         .setRequired(true))
   
 
+//Setup ticket 
+const ticket = new discord.SlashCommandBuilder()
+  .setName('setup-ticket')
+  .setDescription('Créer un système de ticket')
+  .addChannelOption(channel =>
+    channel.setName('channel')
+    .setDescription('Le channel ou serra envoyer l\'embed')
+    .setRequired(true)
+  )
+  .addRoleOption(role => 
+    role.setName('staff')
+    .setDescription('Le rôle qui pourra voir les tickets')
+    .setRequired(true)
+  )
+
+
 ///////////////////////////////////////////////////////////////////////////////
                             // SELECTEUR MENU //
 ///////////////////////////////////////////////////////////////////////////////
@@ -282,7 +287,6 @@ const commands = [
     setupantiraid.toJSON(),
     setuplog.toJSON(),
     setupwelcome.toJSON(),
-    messagereac.toJSON(),
     lock_commmande.toJSON(),
     unlock_commmande.toJSON(),
     ban_commmande.toJSON(),
@@ -299,7 +303,8 @@ const commands = [
     role_remove_perm.toJSON(),
     rerollGiveaway.toJSON(),
     mpjoinconfig.toJSON(),
-    mpjoinactivate.toJSON()
+    mpjoinactivate.toJSON(),
+    ticket.toJSON()
   ];
   
   const rest = new discord.REST({ version: '10' }).setToken(config.token);
