@@ -45,6 +45,7 @@ Simplifiez l'administration de votre serveur avec ces commandes utilitaires :
 - **/mpjoinactivate**: Permet d\'activer ou non l\'envoi d\'un MP à l\'utilisateur qui rejoint le serveur.
 - **/mpjoinconfig**: Permet de configurer le message envoyé à l\'utilisateur qui rejoint le serveur.
 - **!say**: Utilisez cette commande pour que le bot envoie le message que vous avez écrit, tout en supprimant votre message original.
+- **/setup-ticket**: Permet de créer un système de ticket
 
 ## Instructions d'Installation
 
