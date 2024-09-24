@@ -200,7 +200,7 @@ client.on('interactionCreate', async interaction => {
                   '\n**/role-perm-remove**: Retire le role perm.' + 
                   '\n**/mpjoinactivate**: Permet d\'activer ou non l\'envoi d\'un MP à l\'utilisateur qui rejoint le serveur.' +
                   '\n**/mpjoinconfig**: Permet de configurer le message envoyé à l\'utilisateur qui rejoint le serveur.' + 
-                  '\n**setup-ticket**: Système de ticket simple.'                 
+                  '\n**/setup-ticket**: Système de ticket simple.'                 
                 }],
               })
             break;
