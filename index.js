@@ -61,11 +61,16 @@ const setupwelcome = new discord.SlashCommandBuilder()
       .setRequired(true)
     )
 
-// Commande setup log 
-const setuplog = new discord.SlashCommandBuilder()
-    .setName('setup-log')
-    .setDescription('Configurer le bot pour suivre les logs.')
+// Système de logs 
 
+const setuplogs = new discord.SlashCommandBuilder()
+  .setName('setup-logs')
+  .setDescription('Crée des salons pour les logs et les enregistre dans un fichier JSON')
+  .addStringOption(option => 
+      option.setName('category')
+      .setDescription('Nom de la catégorie pour les logs')
+      .setRequired(true)
+  )
 // Commande de ban 
 const ban_commmande = new discord.SlashCommandBuilder()
   ban_commmande.setName('ban')
@@ -285,7 +290,7 @@ const ticket = new discord.SlashCommandBuilder()
 const commands = [
     help.toJSON(),
     setupantiraid.toJSON(),
-    setuplog.toJSON(),
+    setuplogs.toJSON(),
     setupwelcome.toJSON(),
     lock_commmande.toJSON(),
     unlock_commmande.toJSON(),
