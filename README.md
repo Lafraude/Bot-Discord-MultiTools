@@ -47,6 +47,8 @@ Simplifiez l'administration de votre serveur avec ces commandes utilitaires :
 - **!say**: Utilisez cette commande pour que le bot envoie le message que vous avez écrit, tout en supprimant votre message original.
 - **/setup-ticket**: Permet de créer un système de ticket
 - **/welcome-setup** : Permet de configurer un système de message de bienvenue.
+
+  ### ET BIEN PLUS ENCORE !!!!!!!
 ## Instructions d'Installation
 
 Bonjour 👋,
