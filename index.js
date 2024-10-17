@@ -47,18 +47,19 @@ const setupantiraid = new discord.SlashCommandBuilder()
     .setDescription('Configurer le bot pour protéger votre serveur contre les attaques de type raid.')
 
 // Commande setup welcome
-const setupwelcome = new discord.SlashCommandBuilder()
-    .setName('setup-welcome')
-    .setDescription('Configurer le bot pour gérer les bienvenus.')
+const welcome  = new discord.SlashCommandBuilder()
+    .setName('welcome-setup')
+    .setDescription('Configuration du système de bienvenue.')
     .addChannelOption(channel =>
       channel.setName('channel')
-      .setDescription('Le channel pour envoyer le message')
-      .setRequired(true)
+       .setDescription('Salon pour les messages')
+       .setRequired(true)
     )
-    .addRoleOption(role =>
-      role.setName('role')
-      .setDescription('Le rôle à attribuer à tous les nouveaux membres.')
-      .setRequired(true)
+    .addBooleanOption(
+      option =>
+       option.setName('activate')
+       .setDescription('Activer ou désactiver le système de bienvenue')
+       .setRequired(true)
     )
 
 // Système de logs 
@@ -291,7 +292,7 @@ const commands = [
     help.toJSON(),
     setupantiraid.toJSON(),
     setuplogs.toJSON(),
-    setupwelcome.toJSON(),
+    welcome.toJSON(),
     lock_commmande.toJSON(),
     unlock_commmande.toJSON(),
     ban_commmande.toJSON(),
