@@ -68,7 +68,7 @@ Avant de lancer le bot, exécutez le fichier `install_modules.js` avec la comman
 node install_modules.js
 ```
 3. Configurer Votre Bot
-Allez dans le fichier `config.json`. ATTENTION : Il y a 3 fichiers à configurer : un dans commands, un dans events, et un dans le dossier principal. Vous devrez entrer le jeton de votre bot, l'ID client et l'ID du serveur dans les 3 fichiers ! 🔐
+Allez dans le fichier `config.json`. ATTENTION : Il y a 3 fichiers à configurer : un dans commands, un dans events, et un dans le dossier principal. Vous devrez entrer le token de votre bot, l'ID client et l'ID du serveur dans les 3 fichiers ! 🔐
 
 4. Lancer le Bot
 Une fois tout configuré, démarrez le bot en exécutant :
